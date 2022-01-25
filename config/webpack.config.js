@@ -352,7 +352,11 @@ module.exports = function(webpackEnv) {
               test: /\.svg$/,
               use: [
                 {loader: 'svg-sprite-loader', options: {}},
-                {loader: 'svgo-loader', options: {}}
+                {loader: 'svgo-loader', options: {
+                  plugins: [
+                    {removeAttrs:{attrs: 'fill'}}
+                  ]
+                  }}
               ]
             },
             // "url" loader works like "file" loader except that it embeds assets
