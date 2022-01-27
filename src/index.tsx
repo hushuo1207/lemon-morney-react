@@ -5,12 +5,12 @@ import App from './App';
 // import reportWebVitals from './reportWebVitals';
 // import './yyy/bbb.tsx'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ReactDOM.render(<App/>,
   document.getElementById('root')
 );
+
+// delete </React.StrictMode>   else  console have bugs
+
 
 
 // If you want to start measuring performance in your app, pass a function
