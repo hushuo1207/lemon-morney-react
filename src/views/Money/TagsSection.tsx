@@ -26,7 +26,7 @@ type Props = {
   value: string[];
   onChange: (selected: string[]) => void;
 }
-const TagSection: React.FC<Props> = (props) => {
+const TagsSection: React.FC<Props> = (props) => {
   const {tags, setTags} = useTags();
   const selectedTags = props.value;
   const onAddTag = () => {
@@ -60,4 +60,4 @@ const TagSection: React.FC<Props> = (props) => {
   );
 };
 
-export {TagSection};
+export {TagsSection};

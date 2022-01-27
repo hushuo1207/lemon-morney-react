@@ -2,7 +2,7 @@ import Layout from '../components/Layout';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {CategorySection} from './Money/CategorySection';
-import {TagSection} from './Money/TagSection';
+import {TagsSection} from './Money/TagsSection';
 import {NoteSection} from './Money/NoteSection';
 import {NumberPadSection} from './Money/NumberPadSection';
 
@@ -32,8 +32,8 @@ function Money() {
       {selected.category}
       <hr/>
       {selected.amount}
-      <TagSection value={selected.tags}
-                  onChange={tags => onChange({tags})}/>
+      <TagsSection value={selected.tags}
+                   onChange={tags => onChange({tags})}/>
       <NoteSection value={selected.note}
                    onChange={note => onChange({note})}/>
       <CategorySection value={selected.category}
