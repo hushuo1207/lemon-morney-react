@@ -1,7 +1,7 @@
 {
   "name": "morney-react",
   "version": "0.1.0",
-  "homepage": "https://axing-website.gitee.io/lemon-account-react-website/",
+  "homepage": "https://hushuo1207.github.io/lemon-account-react-website/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.9.0",
