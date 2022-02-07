@@ -24,7 +24,7 @@ const MyLayout = styled(Layout)`
 
 function Money() {
   const [selected, setSelected] = useState(defaultFormData);
-  const {records, addRecord} = useRecords();
+  const {addRecord} = useRecords();
   const onChange = (obj: Partial<typeof selected>) => {
     setSelected({...selected, ...obj});
   };
