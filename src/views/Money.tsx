@@ -17,7 +17,7 @@ const defaultFormData = {
 };
 
 const MyLayout = styled(Layout)`
-  border: 1px solid red;
+  //border: 1px solid red;
   display: flex;
   flex-direction: column;
 `;
@@ -39,7 +39,7 @@ function Money() {
 `;
 
   return (
-    <MyLayout>
+    <MyLayout scrollTop={9999}>
       <TagsSection value={selected.tagIds}
                    onChange={tagIds => onChange({tagIds})}/>
       <NoteSection value={selected.note}
