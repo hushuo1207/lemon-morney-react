@@ -17,10 +17,8 @@ git add -A
 git commit -m 'deploy'
 
 # 部署到 https://<USERNAME>axing-website.gitee.io
-#git push -f  git@gitee.com:axing-website/lemon-account-react-website.git master:gh-pages
+git push -f  git@gitee.com:axing-website/lemon-account-react-website.git master:gh-pages
 
-# 部署到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:hushuo1207/lemon-account-react-website.git master:gh-pages
 
 cd -
 
