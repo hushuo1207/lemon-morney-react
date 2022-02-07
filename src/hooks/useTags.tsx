@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import { createId } from 'lib/creadId';
-import {useUpdate} from './hooks/useUpdate';
+import {useUpdate} from './useUpdate';
 
 // const defaultTags = [
 //   {id: createId(), name: '衣'},
