@@ -22,6 +22,9 @@ const MyLayout = styled(Layout)`
   flex-direction: column;
 `;
 
+const CategoryWrapper = styled.div`
+    background:#c4c4c4;
+`;
 function Money() {
   const [selected, setSelected] = useState(defaultFormData);
   const {addRecord} = useRecords();
@@ -34,14 +37,9 @@ function Money() {
       setSelected(defaultFormData);
     }
   };
-  const CategoryWrapper = styled.div`
-    background:#c4c4c4;
-`;
 
   return (
     <MyLayout scrollTop={9999}>
-      {JSON.stringify(selected)}
-      <hr/>
       <TagsSection value={selected.tagIds}
                    onChange={tagIds => onChange({tagIds})}/>
       <NoteSection value={selected.note}

@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import {RecordItem, useRecords} from '../hooks/useRecords';
 import {useTags} from '../hooks/useTags';
 import day from 'dayjs';
+import {Space} from '../components/Space';
+import {Center} from '../components/Center';
 
 const CategoryWrapper = styled.div`
   background:white;
@@ -56,7 +58,14 @@ function Statistics() {
         <CategorySection value={category}
                          onChange={value => setCategory(value)}/>
       </CategoryWrapper>
-      {array.map(([date, records]) => <div key={date}>
+      {array.length === 0
+        ? <Center>
+          <Space/>
+          <Space/>
+          <Space/>
+          <div>暂无数据，快去添加一笔吧</div>
+        </Center>
+        : array.map(([date, records]) => <div key={date}>
         <Header>
           {date}
         </Header>
