@@ -10,6 +10,9 @@ const Wrapper = styled.div`
 const Main = styled.div`
   flex-grow: 1;
   overflow: auto;
+  &::-webkit-scrollbar{
+    display: none;
+  }
 `;
 type Props = {
   className?: string;
@@ -20,14 +23,14 @@ const Layout: React.FC<Props> = (props) => {
   useEffect(() => {
     setTimeout(() => {
       if (!mainRef.current) {return;}
-      console.log(props.scrollTop);
+      // console.log(props.scrollTop);
       mainRef.current.scrollTop = props.scrollTop!;
-      console.log(mainRef.current.scrollTop);
+      // console.log(mainRef.current.scrollTop);
     }, 0);
   }, [props.scrollTop]);
   return (
     <Wrapper>
-      <Main ref={mainRef} className={props.className} data-x={'frank'}>
+      <Main ref={mainRef} className={props.className} data-x={'hushuo'}>
         {props.children}
       </Main>
       <Nav/>
