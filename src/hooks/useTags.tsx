@@ -58,9 +58,15 @@ const useTags = () => { // 封装一个自定义 Hook
     setTags(tags.filter(tag => tag.id !== id));
   };
   const addTag = () => {
-    console.log('hi');
+    // console.log('hi');
     const tagName = window.prompt('新标签的名称为');
     if (tagName !== null && tagName !== '') {
+      for (let i = 0; i < tags.length; i++){
+        if(tags[i].name === tagName){
+          window.alert('该标签已重复！')
+          return;
+        }
+      }
       setTags([...tags, {id: createId(), name: tagName}]);
     }
   };
