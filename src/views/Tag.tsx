@@ -45,6 +45,7 @@ const Tag: React.FC = () => {
         <Space/>
         <Button onClick={() => {
           deleteTag(tag.id);
+          onClickBack();
         }}>删除标签</Button>
       </Center>
     </div>

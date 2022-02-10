@@ -55,7 +55,9 @@ const useTags = () => { // 封装一个自定义 Hook
     // // 把 tagsClone 的第 index 删掉
     // tagsClone.splice(index, 1);
     // setTags(tagsClone);
-    setTags(tags.filter(tag => tag.id !== id));
+    if(window.confirm("删除后相关标签会变为‘无’，确认删除？")){
+      setTags(tags.filter(tag => tag.id !== id));
+    }
   };
   const addTag = () => {
     // console.log('hi');

@@ -74,7 +74,7 @@ function Statistics() {
             return <Item key={r.createdAt}>
               <div className="tags oneLine">
                 {r.tagIds
-                  .map(tagId => <span key={tagId}>{getName(tagId)}</span>)
+                  .map(tagId => <span key={tagId}>{getName(tagId) || '无'}</span>)
                   .reduce((result, span, index, array) =>
                     result.concat(index < array.length - 1 ? [span, '，'] : [span]), [] as ReactNode[])
                 }
