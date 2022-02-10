@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import { createId } from 'lib/creadId';
 import {useUpdate} from './useUpdate';
+import {useHistory} from 'react-router-dom';
 
 // const defaultTags = [
 //   {id: createId(), name: '衣'},
@@ -57,6 +58,7 @@ const useTags = () => { // 封装一个自定义 Hook
     // setTags(tagsClone);
     if(window.confirm("删除后相关标签会变为‘无’，确认删除？")){
       setTags(tags.filter(tag => tag.id !== id));
+      onClickBack()
     }
   };
   const addTag = () => {
@@ -76,7 +78,11 @@ const useTags = () => { // 封装一个自定义 Hook
     const tag = tags.filter(t => t.id === id)[0];
     return tag ? tag.name : '';
   };
-  return {tags, getName, addTag, setTags, findTag, updateTag, findTagIndex, deleteTag};
+  const history = useHistory()
+  const onClickBack = () => {
+    history.goBack()
+  }
+  return {tags, getName, addTag, setTags, findTag, updateTag, findTagIndex, deleteTag, onClickBack};
 };
 
 export {useTags};

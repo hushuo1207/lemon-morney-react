@@ -1,6 +1,6 @@
 import React from 'react';
 import {useTags} from '../hooks/useTags';
-import {useParams, useHistory} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import Layout from '../components/Layout';
 import {Button} from '../components/Button';
 import styled from 'styled-components';
@@ -26,7 +26,7 @@ const InputWrapper = styled.div`
   margin-top: 8px;
 `;
 const Tag: React.FC = () => {
-  const {findTag, updateTag, deleteTag} = useTags();
+  const {findTag, updateTag, deleteTag, onClickBack} = useTags();
   let {id: idString} = useParams<Params>();
   const tag = findTag(parseInt(idString));
   const tagContent = (tag: { id: number; name: string }) => (
@@ -45,15 +45,10 @@ const Tag: React.FC = () => {
         <Space/>
         <Button onClick={() => {
           deleteTag(tag.id);
-          onClickBack();
         }}>删除标签</Button>
       </Center>
     </div>
   );
-  const history = useHistory()
-  const onClickBack = ()=>{
-    history.goBack()
-  }
   return (
     <Layout>
       <Topbar>
@@ -62,7 +57,7 @@ const Tag: React.FC = () => {
         <Icon/>
       </Topbar>
 
-      {tag ? tagContent(tag) : <Center>tag 不存在</Center>}
+      {tag && tagContent(tag)}
 
     </Layout>
   );
