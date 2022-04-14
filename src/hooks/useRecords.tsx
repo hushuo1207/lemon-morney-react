@@ -30,6 +30,7 @@ export const useRecords = () => {
     }
     const record = {...newRecord, createdAt: (new Date()).toISOString()};
     setRecords([...records, record]);
+    alert('保存成功');
     return true
   };
 

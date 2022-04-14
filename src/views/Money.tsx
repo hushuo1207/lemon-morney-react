@@ -33,13 +33,22 @@ function Money() {
   };
   const submit = () => {
     if(addRecord(selected)){
-      alert('保存成功');
       setSelected(defaultFormData);
+      return true;
+    }else{
+      return false
     }
   };
 
   return (
     <MyLayout scrollTop={9999}>
+      {selected.tagIds.join(' ')}
+      <hr />
+      {selected.note}
+      <hr />
+      {selected.category}
+      <hr />
+      {selected.amount}
       <TagsSection value={selected.tagIds}
                    onChange={tagIds => onChange({tagIds})}/>
       <NoteSection value={selected.note}

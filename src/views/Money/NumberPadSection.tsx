@@ -5,7 +5,7 @@ import {Wrapper} from './NumberPadSection/Wrapper';
 type Props = {
   value: number;
   onChange: (value: number) => void;
-  onOk?: () => void;
+  onOk?: () => Boolean;
 }
 const NumberPadSection: React.FC<Props> = (props) => {
   // const output = props.value.toString();
@@ -26,11 +26,9 @@ const NumberPadSection: React.FC<Props> = (props) => {
     const text = (e.target as HTMLButtonElement).textContent;
     if (text === null) {return;}
     if (text === 'OK') {
-      if (props.onOk) {
-        props.onOk();
+      if (props.onOk && props.onOk()) {
         _setOutput('0');
-        props.onChange(0);
-
+        // props.onChange(0);
       }
       return;
     }
